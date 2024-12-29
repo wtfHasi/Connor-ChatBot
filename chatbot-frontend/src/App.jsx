@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import './styles/tailwind.css';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
