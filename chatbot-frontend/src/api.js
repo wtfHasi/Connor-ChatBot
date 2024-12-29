@@ -16,7 +16,7 @@ export const loginUser = async (credentials) => {
 // Sign-Up API call
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/api/users/signup`, userData);
+    const response = await axios.post(`${API_BASE_URL}/api/users/register`, userData);
     return response.data;
   } catch (error) {
     throw error.response?.data?.message || "Registration failed!";
