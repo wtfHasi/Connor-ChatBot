@@ -1,0 +1,4 @@
+.signup-container {
+    @apply flex flex-col items-center justify-center h-screen bg-blue-50;
+  }
+  

@@ -1,6 +1,7 @@
 // src/components/Login.jsx
 import React, { useState } from "react";
 import { loginUser } from "../api";
+import '../styles/login.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");

@@ -1,6 +1,7 @@
 // src/components/SignUp.jsx
 import React, { useState } from "react";
 import { registerUser } from "../api";
+import '../styles/signup.css';
 
 const SignUp = () => {
   const [name, setName] = useState("");
