@@ -91,7 +91,7 @@ button:hover {
   position: relative;
   z-index: 1;
   width: 50%;
-  text-align: left; /* Left-align the welcome text */
+  text-align: center; /* Left-align the welcome text */
   font-size: 2rem;
   font-weight: bold;
   color: white; /* Same font color as navbar */
