@@ -48,7 +48,14 @@ const Login = () => {
         {error && <p className="error-message">{error}</p>}
         <button type="submit">Login</button>
       </form>
+      <div class="welcome-text">
+        <p>Welcome to Connor, your AI-powered chatbot companion. Experience the future of interaction!</p>
+        </div>
+        <div class="footer">
+          © 2024 Connor Chatbot. All Rights Reserved.
+          </div>
     </div>
+    
   );
 };
 
