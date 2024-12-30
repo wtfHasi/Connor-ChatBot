@@ -29,6 +29,10 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
+      <video className="bg-video" autoPlay muted loop>
+        <source src="/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <form onSubmit={handleSignup} className="signup-form">
         <h1>Signup</h1>
         <div className="input-group">

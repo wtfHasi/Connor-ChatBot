@@ -21,6 +21,10 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <video className="bg-video" autoPlay muted loop>
+        <source src="/bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <form onSubmit={handleLogin} className="login-form">
         <h1>Login</h1>
         <div className="input-group">
