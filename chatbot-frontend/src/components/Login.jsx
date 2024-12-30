@@ -52,7 +52,7 @@ const Login = () => {
         <p>Welcome to Connor, your AI-powered chatbot companion. Experience the future of interaction!</p>
         </div>
         <div class="footer">
-          © 2024 Connor Chatbot. All Rights Reserved.
+          © 2024 Connor. All Rights Reserved.
           </div>
     </div>
     
