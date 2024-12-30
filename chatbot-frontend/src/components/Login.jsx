@@ -1,7 +1,7 @@
 // src/components/Login.jsx
 import React, { useState } from "react";
 import { loginUser } from "../api";
-import '../styles/login.css';
+import "./login.css"; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +13,6 @@ const Login = () => {
     try {
       const response = await loginUser({ email, password });
       console.log("Login successful:", response);
-      // Handle login success (e.g., save token, redirect user)
       alert("Login successful!");
     } catch (err) {
       setError(err);
@@ -21,10 +20,10 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div>
+    <div className="login-container">
+      <form onSubmit={handleLogin} className="login-form">
+        <h1>Login</h1>
+        <div className="input-group">
           <label>Email:</label>
           <input
             type="email"
@@ -33,7 +32,7 @@ const Login = () => {
             required
           />
         </div>
-        <div>
+        <div className="input-group">
           <label>Password:</label>
           <input
             type="password"
@@ -42,7 +41,7 @@ const Login = () => {
             required
           />
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="error-message">{error}</p>}
         <button type="submit">Login</button>
       </form>
     </div>
