@@ -1,44 +1,24 @@
 .login-container {
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Space for welcome text on the right */
-  height: 100vh;
-  color: white;
-  padding: 0 5%;
-  overflow: hidden; /* Ensures video stays within the container */
-}
-
-.login-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black; /* Fallback color in case the video doesn't load */
-  z-index: -2; /* Behind all content and the video */
-}
-
-video.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between login form and welcome text */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  padding: 0 5%; /* Add horizontal padding for spacing */
+  position: relative; /* Position relative for internal elements */
+  color: white; /* Default text color */
 }
 
 .login-form {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Ensure it stays above the background video */
   background-color: rgba(36, 36, 36, 0.9); /* Slightly darker for contrast */
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 300px;
   text-align: left; /* Left-align the content */
+  align-self: center; /* Ensure the login form is vertically centered */
 }
 
 .login-form h1 {
@@ -89,22 +69,27 @@ button:hover {
 
 .welcome-text {
   position: relative;
-  z-index: 1;
-  width: 50%;
+  z-index: 1; /* Ensure it stays above the background video */
+  width: 45%; /* Adjust width for proper spacing */
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: white; /* Same font color as navbar */
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  align-self: center; /* Vertically center the welcome text */
 }
 
 .footer {
   position: fixed;
-  bottom: 2%;
-  width: 100%;
+  bottom: 0; /* Ensure it is at the bottom of the page */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment correction */
+  width: auto;
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+

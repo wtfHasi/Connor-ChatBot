@@ -21,10 +21,6 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <video className="bg-video" autoPlay muted loop>
-        <source src="/bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <form onSubmit={handleLogin} className="login-form">
         <h1>Login</h1>
         <div className="input-group">
@@ -48,10 +44,10 @@ const Login = () => {
         {error && <p className="error-message">{error}</p>}
         <button type="submit">Login</button>
       </form>
-      <div class="welcome-text">
+      <div className="welcome-text">
         <p>Welcome to Connor, your AI-powered chatbot companion. Experience the future of interaction!</p>
         </div>
-        <div class="footer">
+        <div className="footer">
           © 2024 Connor. All Rights Reserved.
           </div>
     </div>

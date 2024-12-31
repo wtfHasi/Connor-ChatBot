@@ -6,18 +6,17 @@ import './App.css';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage"; 
+import BackgroundVideo from "./components/BackgroundVideo";
 
 const App = () => {
   return (
     <Router>
-      <video className="bg-video" autoPlay muted loop>
-        <source src="/bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <BackgroundVideo />
       <Navbar />
       <Routes>
         {/* Homepage Route */}
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<HomePage />} />
 
         {/* Other Routes */}
         <Route path="/login" element={<Login />} />

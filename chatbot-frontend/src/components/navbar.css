@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  top: 2%; /* Adjusted for slight offset */
+  top: 1%; /* Adjusted for slight offset */
   left: 0;
   right: 0;
   background-color: transparent; /* Fully transparent background */
