@@ -6,7 +6,6 @@ import './App.css';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
-import Homepage from "./components/HomePage"; // Import your Homepage component
 
 const App = () => {
   return (
