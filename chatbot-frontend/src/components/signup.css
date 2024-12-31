@@ -1,43 +1,27 @@
 .signup-container {
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Space for welcome text on the right */
-  height: 100vh;
-  color: white;
-  padding: 0 5%;
-  overflow: hidden; /* Ensures video stays within the container */
-}
-
-.signup-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black; /* Fallback color in case the video doesn't load */
-  z-index: -2; /* Behind all content and the video */
-}
-
-video.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between login form and welcome text */
+  height: 100vh; /* Full height of the viewport */
+  width: 100%; /* Full width of the viewport */
+  padding: 0 5%; /* Add horizontal padding for spacing */
+  position: relative; /* Position relative for internal elements */
+  color: white; /* Default text color */
 }
 
 .signup-form {
   position: relative;
-  z-index: 1;
-  background-color: rgba(26, 26, 26, 0.9); /* Slight transparency for the form */
+  z-index: 1; /* Ensure it stays above the background video */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply the blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Ensure compatibility with WebKit browsers */
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 12px; /* Rounder corners for a modern look */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for the frosted look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
   width: 300px;
+  text-align: left; /* Left-align the content */
+  align-self: center; /* Ensure the login form is vertically centered */
 }
 
 .signup-form h1 {
@@ -45,7 +29,7 @@ video.bg-video {
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Subtle text shadow for depth */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.100); /* Subtle text shadow for depth */
 }
 
 .input-group {
@@ -57,33 +41,46 @@ video.bg-video {
   margin-bottom: 0.5rem;
 }
 
+/* Input fields updated for glassmorphism style */
 .input-group input {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #444;
-  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent input field background */
+  backdrop-filter: blur(5px); /* Add slight blur to input fields */
+  -webkit-backdrop-filter: blur(5px); /* Compatibility with WebKit browsers */
   color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
-.error-message {
-  color: red;
-  margin-bottom: 1rem;
+/* On hover or focus for inputs */
+.input-group input:focus {
+  border-color: rgba(255, 255, 255, 0.4); /* Slightly brighter border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
+/* Button updated for modern glass-like styling */
 button {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 4px;
-  background-color: #646cff;
+  border-radius: 8px;
+  background: rgba(104, 112, 255, 0.2); /* Semi-transparent button background */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Button border for glass effect */
+  backdrop-filter: blur(5px); /* Add blur effect */
+  -webkit-backdrop-filter: blur(5px); /* Compatibility for WebKit */
   color: white;
-  border: none;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
+/* Button hover effect */
 button:hover {
-  background-color: #535bf2;
+  background: rgba(89, 97, 255, 0.345); /* Slightly brighter background on hover */
+  border-color: rgba(255, 255, 255, 0.5); /* Brighter border */
 }
 
 /* Welcome text aligned to right middle */
