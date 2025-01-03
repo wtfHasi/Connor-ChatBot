@@ -91,6 +91,7 @@ button:hover {
   text-align: center; /* Left-align the welcome text */
   font-size: 2rem;
   font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: white; /* Same font color as navbar */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.4;
