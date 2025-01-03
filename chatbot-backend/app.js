@@ -6,6 +6,7 @@ const connectDB = require('./src/config/db');
 require('dotenv').config({ path: './.env' });
 
 const userRoutes = require('./src/routes/userRoutes'); // Import user routes
+const intelligenceRoutes = require('../intelligence/src/routes/intelligenceRoutes'); // Intelligence routes
 
 const app = express();
 
@@ -26,6 +27,7 @@ connectDB();
 
 // Use user routes
 app.use('/api/users', userRoutes); // API prefix: /api/users
+app.use('/api/intelligence', intelligenceRoutes); // Intelligence routes
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

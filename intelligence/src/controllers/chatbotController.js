@@ -1,19 +1,38 @@
-const { Event } = require('../models/eventModel');
-const { generateChatbotResponse } = require('../prompts/chatbotLogic');
+const { getPrompt } = require('../utils/promptUtils');
+const Event = require('../models/eventModel');
 
-const handleUserQuery = async (user, query) => {
-    if (query.toLowerCase().includes('remind')) {
-        const events = await Event.find({ userId: user._id });
-        return formatEventsResponse(events);
+// Handle user chat
+const handleChat = async (req, res) => {
+    const { message } = req.body;
+
+    try {
+        // Example: Basic NLP matching (can integrate AI models later)
+        if (message.toLowerCase().includes('reminder')) {
+            return res.json({
+                response: getPrompt('fetchReminders'),
+            });
+        } else if (message.toLowerCase().includes('hello')) {
+            return res.json({
+                response: getPrompt('greeting', req.user.name),
+            });
+        } else {
+            return res.json({
+                response: getPrompt('unknownCommand'),
+            });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error processing the chat.' });
     }
-
-    // Handle general chatbot queries
-    return await generateChatbotResponse(query);
 };
 
-const formatEventsResponse = (events) => {
-    if (!events.length) return 'You have no upcoming events.';
-    return events.map(e => `${e.title} on ${e.date} at ${e.time}`).join('\n');
+// Fetch reminders for the logged-in user
+const getReminders = async (req, res) => {
+    try {
+        const reminders = await Event.find({ userId: req.user._id });
+        res.json(reminders);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching reminders.' });
+    }
 };
 
-module.exports = { handleUserQuery };
+module.exports = { handleChat, getReminders };
