@@ -1,16 +1,18 @@
-// server.js
-require('dotenv').config();
 const express = require('express');
 const connectDB = require('./src/config/db');
+const chatbotRoutes = require('./src/routes/intelligenceRoutes');
+
+require('dotenv').config(); // Load environment variables
 
 const app = express();
-app.use(express.json());
 
 // Connect to MongoDB
 connectDB();
 
-// API Routes
-app.use('/api/events', require('./routes/eventRoutes'));
+app.use(express.json());
+app.use('/api/intelligence', chatbotRoutes);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+

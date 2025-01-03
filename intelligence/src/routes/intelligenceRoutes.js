@@ -1,9 +1,11 @@
 const express = require('express');
 const { handleChat } = require('../controllers/intelligenceController');
+const protect = require('../../../chatbot-backend/src/middleware/authMiddleware'); // Adjust the path as needed
 
 const router = express.Router();
 
-// Route for handling chatbot communication
-router.post('/chat', handleChat);
+// Apply `protect` middleware to secure chatbot routes
+router.post('/chat', protect, handleChat);
 
 module.exports = router;
+
