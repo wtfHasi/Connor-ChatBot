@@ -1,11 +1,3 @@
-const Conversation = require('../models/conversationModel');
-const {
-    getGreeting,
-    getReminderCreation,
-    getFetchReminders,
-    getUnknownCommand,
-} = require('../utils/promptUtils');
-
 const { exec } = require('child_process');
 const path = require('path');
 
