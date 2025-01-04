@@ -1,11 +1,12 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";  // Use useNavigate instead of useHistory
 import "./Navbar.css"; // Import the CSS file
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false); // State to track scroll position
   const location = useLocation();
+  const navigate = useNavigate();  // Access the navigate function for redirection
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,14 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    // Clear any authentication data, like a token or user session
+    localStorage.removeItem("authToken"); // Example: remove auth token from localStorage
+    // Redirect to the login page
+    navigate("/login");
+  };
 
   return (
     <nav className={`navbar ${scrolling ? "scrolled" : ""}`}>
@@ -44,6 +53,8 @@ const Navbar = () => {
           <Link to="/login">
             <button>Login</button>
           </Link>
+        ) : location.pathname === "/chatbot" ? ( // Show logout only on chatbot page
+          <button onClick={handleLogout}>Log Out</button>
         ) : null}
       </div>
     </nav>
