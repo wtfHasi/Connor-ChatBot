@@ -28,16 +28,17 @@ const handleChat = async (req, res) => {
     }
 
     try {
-        await Conversation.create({
-            userId,
-            message,
-            response,
-        });
+        // Skipping database saving for now
+        // await Conversation.create({
+        //     userId,
+        //     message,
+        //     response,
+        // });
 
         return res.json({ response });
     } catch (err) {
-        console.error('Error saving conversation:', err);
-        return res.status(500).json({ error: 'Failed to save conversation.' });
+        console.error('Error in handleChat:', err);
+        return res.status(500).json({ error: 'An unexpected error occurred.' });
     }
 };
 

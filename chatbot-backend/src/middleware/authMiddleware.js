@@ -1,21 +1,26 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/user'); // Import User model
 
-// Middleware to protect routes
-const protect = (req, res, next) => {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-
-    if (!token) {
-        return res.status(401).json({ message: 'No token, authorization denied' });
-    }
+const protect = async (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) return res.status(401).json({ message: 'Not authorized, no token' });
 
     try {
+        // Verify token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = { id: decoded.id }; // Add the user ID from the decoded token
+
+        // Retrieve user details from the database
+        const user = await User.findById(decoded.id).select('-password');
+        if (!user) return res.status(404).json({ message: 'User not found' });
+
+        req.user = user; // Attach user to the request
         next();
     } catch (error) {
-        res.status(401).json({ message: 'Invalid token' });
+        console.error('Auth middleware error:', error.message);
+        res.status(401).json({ message: 'Not authorized, token invalid or expired' });
     }
 };
 
 module.exports = protect;
+
 
