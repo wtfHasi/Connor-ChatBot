@@ -1,0 +1,21 @@
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .user-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .bot-message {
+    background-color: #f8d7da;
+    color: #842029;
+    align-self: flex-start;
+    text-align: left;
+  }
+  
