@@ -6,40 +6,25 @@ const {
     getUnknownCommand,
 } = require('../utils/promptUtils');
 
-const handleChat = async (req, res) => {
-    const { message } = req.body;
-    const userId = req.user.id; // Use decoded user ID from `protect` middleware
+const { exec } = require('child_process');
+const path = require('path');
 
-    let response = '';
+const handleChat = (req, res) => {
+    const { message } = req.body;  // Assuming the user message is sent in the body of the POST request
+    const pythonScriptPath = path.join(__dirname, '../utils/cohereAI.py');
+    console.log(pythonScriptPath);  // Log the path for debugging
 
-    if (message.toLowerCase().includes('hello')) {
-        response = getGreeting(req.user.name || 'User');
-    } else if (message.toLowerCase().includes('create reminder')) {
-        const eventName = "Doctor's appointment";
-        const eventDate = "2025-01-10";
-        response = getReminderCreation(eventName, eventDate);
-    } else if (message.toLowerCase().includes('reminders')) {
-        const reminders = [
-            { title: "Doctor's appointment", date: "2025-01-10", time: "10:00 AM" },
-        ];
-        response = getFetchReminders(reminders);
-    } else {
-        response = getUnknownCommand();
-    }
-
-    try {
-        // Skipping database saving for now
-        // await Conversation.create({
-        //     userId,
-        //     message,
-        //     response,
-        // });
-
-        return res.json({ response });
-    } catch (err) {
-        console.error('Error in handleChat:', err);
-        return res.status(500).json({ error: 'An unexpected error occurred.' });
-    }
+    exec(`python ${pythonScriptPath} "${message}"`, (error, stdout, stderr) => {
+        if (error) {
+            console.error('Error executing Python script:', error);
+            return res.status(500).json({ error: 'Failed to process the message.' });
+        }
+        if (stderr) {
+            console.error('Python script stderr:', stderr);
+            return res.status(500).json({ error: 'Error in processing message.' });
+        }
+        return res.json({ response: stdout.trim() });
+    });
 };
 
 module.exports = { handleChat };
