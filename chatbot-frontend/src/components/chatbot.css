@@ -2,11 +2,11 @@
 .chatbot-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Ensures the chat input area stays at the bottom */
+  justify-content: flex-start; /* Keep the sections aligned from top to bottom */
   align-items: center;
   width: 1000px; /* Fixed width */
-  height: 600px; /* Fixed height */
-  margin: 80px auto 0; /* Margin-top to push the container below the navbar */
+  height: 700px; /* Fixed height */
+  margin: 60px auto 0; /* Margin-top to push the container below the navbar */
   padding: 20px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.1);
@@ -14,24 +14,25 @@
   -webkit-backdrop-filter: blur(8px);
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
-/* Chat Window */
+/* Chat Window (Top Window) */
 .chat-window {
   display: flex;
   flex-direction: column; /* Stack messages vertically */
   justify-content: flex-start; /* Ensure messages start from the top */
   align-items: stretch; /* Messages take up full width within container */
   width: 100%;
-  max-height: calc(100% - 100px); /* Adjust the height of chat window to account for input area */
+  flex-grow: 1; /* Allow this section to take up available space */
   overflow-y: auto; /* Enable scrolling when content exceeds height */
   padding: 10px;
   margin-bottom: 20px; /* Space for the input area */
+  max-height: calc(100% - 100px); /* Prevent the messages from extending below the input area */
 }
 
-/* Chat Input Area */
+/* Chat Input Area (Bottom Window) */
 .chat-input-area {
   display: flex;
   align-items: center;
@@ -81,3 +82,4 @@
   background-color: rgba(89, 97, 255); /* Slightly brighter blue on hover */
   transform: scale(1.05); /* Slightly scale up the button */
 }
+
