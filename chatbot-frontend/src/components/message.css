@@ -1,29 +1,52 @@
 /* Chat Messages */
 .message {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 15px;
-    max-width: 80%;
-    background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background */
-    backdrop-filter: blur(5px); /* Glass effect */
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* User's Message */
-  .user-message {
-    background-color: rgba(104, 112, 255, 0.2); /* Light purple for user messages */
-    color: white;
-    align-self: flex-end;
-    text-align: right; /* Right-align user messages */
-    margin-left: auto; /* Push the user’s message to the right */
-  }
-  
-  /* Bot's Message */
-  .bot-message {
-    background-color: rgba(89, 97, 255, 0.345); /* Slightly brighter purple for bot messages */
-    color: white;
-    align-self: flex-start;
-    text-align: left; /* Left-align bot messages */
-    margin-right: auto; /* Push the bot’s message to the left */
-  }  
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparent background */
+  backdrop-filter: blur(5px); /* Glass effect */
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Ensures long words break within the box */
+  display: block; /* Ensures each message appears in its own row */
+  max-width: 80%; /* Limits the width for longer messages */
+  width: fit-content; /* Adjust the width to fit the content */
+}
+
+/* User's Message */
+.user-message {
+  background-color: rgba(104, 112, 255, 0.6); /* Light purple for user messages */
+  color: white;
+  align-self: flex-end; /* Aligns the message to the right */
+  text-align: right; /* Text is right-aligned within the box */
+  margin-left: auto; /* Pushes the message to the right */
+  max-width: 80%; /* Ensures user messages do not overflow */
+  width: fit-content; /* Adjust the width to fit the content */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Bot's Message */
+.bot-message {
+  background-color: rgba(89, 97, 255, 0.75); /* Slightly brighter purple for bot messages */
+  color: white;
+  align-self: flex-start; /* Aligns the message to the left */
+  text-align: left; /* Text is left-aligned within the box */
+  margin-right: auto; /* Pushes the message to the left */
+  max-width: 80%; /* Ensures bot messages do not overflow */
+  width: fit-content; /* Adjust the width to fit the content */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Chat Window */
+.chat-window {
+  display: flex;
+  flex-direction: column; /* Ensures messages stack vertically */
+  justify-content: flex-start; /* Messages start from the top */
+  align-items: stretch; /* Ensures messages stretch to fit the container */
+  height: 100%; /* Takes up full height of the container */
+  overflow-y: auto; /* Allows scrolling if messages exceed the container height */
+  padding: 10px;
+}
+

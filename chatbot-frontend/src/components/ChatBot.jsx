@@ -34,26 +34,26 @@ const ChatBot = () => {
 
   return (
     <div className="chatbot-container">
-      <div className="chat-window">
+      <div className="chat-messages">
         {/* Display chat messages */}
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} isUser={msg.isUser} />
         ))}
       </div>
 
-      <form onSubmit={handleUserMessage} className="chat-input-form">
+      <form onSubmit={handleUserMessage} className="chat-input-area">
         <input
           type="text"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
           placeholder="Type a message..."
+          className="chat-input"
           required
         />
-        <button type="submit">Send</button>
+        <button type="submit" className="send-button">Send</button>
       </form>
     </div>
   );
 };
 
 export default ChatBot;
-
