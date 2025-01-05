@@ -6,7 +6,7 @@
   align-items: center;
   width: 1000px; /* Fixed width */
   height: 700px; /* Fixed height */
-  margin: 60px auto 0;
+  margin: 80px auto 0;
   padding: 20px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.1);
@@ -32,16 +32,6 @@
 
 .chat-window::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-}
-
-
-.chat-window::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); /* Transparent track */
-}
-
-.chat-window::-webkit-scrollbar-thumb {
-  background: rgba(104, 112, 255, 0.6); /* Styled scrollbar thumb */
-  border-radius: 3px;
 }
 
 /* Chat Input Area (Bottom Window) */
