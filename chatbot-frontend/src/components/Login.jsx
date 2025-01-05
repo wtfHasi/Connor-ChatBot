@@ -1,30 +1,37 @@
 import React, { useState } from "react";
 import { loginUser } from "../api";
-import { useNavigate } from "react-router-dom";  // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "./login.css"; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  
-  const navigate = useNavigate();  // Initialize the useNavigate hook
+  const [isLoading, setIsLoading] = useState(false); // State for loading spinner
+  const [isSuccess, setIsSuccess] = useState(false); // State for success indicator
+
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Show loading spinner
+
     try {
-      // Call the loginUser API and get the response
       const response = await loginUser({ email, password });
       console.log("Login successful:", response);
-      alert("Login successful!");
-
-      // Save the token in localStorage
       localStorage.setItem("authToken", response.token);
 
-      // Redirect to chatbot page after successful login
-      navigate("/chatbot");  // This will take the user to the /chatbot route
+      setIsLoading(false);
+      setIsSuccess(true); // Show success indicator
+      setError("");
+
+      // Wait for a few seconds before navigating to the chatbot page
+      setTimeout(() => {
+        navigate("/chatbot");
+      }, 3000);
     } catch (err) {
-      setError(err);  // Display the error message if login fails
+      setIsLoading(false);
+      setError("Login failed. Please try again.");
     }
   };
 
@@ -51,7 +58,9 @@ const Login = () => {
           />
         </div>
         {error && <p className="error-message">{error}</p>}
-        <button type="submit">Login</button>
+        {isLoading && <div className="spinner"></div>}
+        {isSuccess && <div className="success-icon">&#10004;</div>}
+        <button type="submit" disabled={isLoading || isSuccess}>Login</button>
       </form>
       <div className="welcome-text">
         <p>Welcome to Connor, your AI-powered chatbot companion. Experience the future of interaction!</p>

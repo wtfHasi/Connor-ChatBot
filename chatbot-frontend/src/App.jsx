@@ -5,6 +5,7 @@ import './App.css';
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
 import BackgroundVideo from "./components/BackgroundVideo";
 import ChatBot from "./components/ChatBot";  // Import your new ChatBotPage component
 
@@ -14,6 +15,9 @@ const App = () => {
       <BackgroundVideo />
       <Navbar />
       <Routes>
+        {/* Homepage Route */}
+        <Route path="/" element={<HomePage />} />
+
         {/* Other Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
