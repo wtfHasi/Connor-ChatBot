@@ -2,11 +2,11 @@
 .chatbot-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Keep the sections aligned from top to bottom */
+  justify-content: flex-end; /* Align everything to the bottom initially */
   align-items: center;
   width: 1000px; /* Fixed width */
   height: 700px; /* Fixed height */
-  margin: 60px auto 0; /* Margin-top to push the container below the navbar */
+  margin: 60px auto 0;
   padding: 20px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.1);
@@ -18,45 +18,56 @@
   overflow: hidden;
 }
 
-/* Chat Window (Top Window) */
 .chat-window {
   display: flex;
-  flex-direction: column; /* Stack messages vertically */
-  justify-content: flex-start; /* Ensure messages start from the top */
-  align-items: stretch; /* Messages take up full width within container */
-  width: 100%;
-  flex-grow: 1; /* Allow this section to take up available space */
-  overflow-y: auto; /* Enable scrolling when content exceeds height */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: calc(100% - 80px);
+  overflow-y: auto; /* Enable scrolling */
   padding: 10px;
-  margin-bottom: 20px; /* Space for the input area */
-  max-height: calc(100% - 100px); /* Prevent the messages from extending below the input area */
+  box-sizing: border-box;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.chat-window::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+}
+
+
+.chat-window::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Transparent track */
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: rgba(104, 112, 255, 0.6); /* Styled scrollbar thumb */
+  border-radius: 3px;
 }
 
 /* Chat Input Area (Bottom Window) */
 .chat-input-area {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between input and button */
-  width: 80%; /* Slightly less than 100% to leave space from sides */
+  gap: 10px;
+  width: 100%; /* Full width */
   padding: 10px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  position: absolute; /* Position at the bottom */
-  bottom: 20px; /* Space from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Correct horizontal positioning */
+  position: sticky; /* Sticky positioning to keep it at the bottom */
+  bottom: 0;
+  z-index: 10;
 }
 
 /* Text Input */
 .chat-input {
-  flex-grow: 1; /* Take up available space */
+  flex-grow: 1;
   padding: 10px;
   border: none;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.8);
-  color: rgba(0, 0, 0, 0.7); /* Darker gray color for better visibility */
+  color: rgba(0, 0, 0, 0.7);
   font-size: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -64,22 +75,20 @@
 
 /* Send Button */
 .send-button {
-  width: 80px; /* Fixed width for the send button */
+  width: 80px;
   padding: 6px 12px;
   background-color: rgba(104, 112, 255, 0.8);
   border: none;
   border-radius: 20px;
   color: white;
-  font-size: 0.8rem; /* Smaller text */
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and scaling */
+  transition: background-color 0.3s, transform 0.3s;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Send Button Hover Effect */
 .send-button:hover {
-  background-color: rgba(89, 97, 255); /* Slightly brighter blue on hover */
-  transform: scale(1.05); /* Slightly scale up the button */
+  background-color: rgba(89, 97, 255);
+  transform: scale(1.05);
 }
-

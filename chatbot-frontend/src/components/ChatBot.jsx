@@ -1,24 +1,31 @@
-// src/components/ChatBot.jsx
-import React, { useState } from "react";
-import { generateChatResponse } from "../api";  // Import the API to interact with Cohere
-import Message from './Message';  // Import the Message component
-import './chatbot.css';  // Import the chatbot's CSS
+import React, { useState, useEffect, useRef } from "react";
+import { generateChatResponse } from "../api"; // Import the API to interact with Cohere
+import Message from './Message'; // Import the Message component
+import './chatbot.css'; // Import the chatbot's CSS
 
 const ChatBot = () => {
-  const [userMessage, setUserMessage] = useState("");  // User input message
-  const [messages, setMessages] = useState([]);  // Store the conversation
+  const [userMessage, setUserMessage] = useState(""); // User input message
+  const [messages, setMessages] = useState([]); // Store the conversation
+  const chatMessagesRef = useRef(null); // Reference for the chat messages container
+
+  // Scroll to bottom of the chat window
+  useEffect(() => {
+    if (chatMessagesRef.current) {
+      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
+    }
+  }, [messages]); // Run this effect whenever messages change
 
   // Handle user message input
   const handleUserMessage = async (e) => {
     e.preventDefault();
-    
+
     // Add user's message to the chat
     setMessages([...messages, { text: userMessage, isUser: true }]);
-    setUserMessage("");  // Clear input field
+    setUserMessage(""); // Clear input field
 
     // Send user message to backend (Cohere AI) and get response
     try {
-      const response = await generateChatResponse(userMessage);  // Call backend API to get response from Cohere
+      const response = await generateChatResponse(userMessage); // Call backend API to get response from Cohere
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: response.response, isUser: false },
@@ -34,7 +41,10 @@ const ChatBot = () => {
 
   return (
     <div className="chatbot-container">
-      <div className="chat-messages">
+      <div
+        className="chat-window"
+        ref={chatMessagesRef} // Attach ref to the chat messages container
+      >
         {/* Display chat messages */}
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} isUser={msg.isUser} />

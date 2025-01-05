@@ -39,14 +39,3 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Chat Window */
-.chat-window {
-  display: flex;
-  flex-direction: column; /* Ensures messages stack vertically */
-  justify-content: flex-start; /* Messages start from the top */
-  align-items: stretch; /* Ensures messages stretch to fit the container */
-  height: 100%; /* Takes up full height of the container */
-  overflow-y: auto; /* Allows scrolling if messages exceed the container height */
-  padding: 10px;
-}
-
