@@ -7,7 +7,7 @@
     padding: 20px;
     margin-top: 80px; /* Adjust this margin to match your navbar's height */
     color: white;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     height: auto; /* Allow the height to adjust based on content */
@@ -15,7 +15,9 @@
     box-sizing: border-box;
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
-  }
+    border-radius: 12px; /* Added to give rounded corners */
+}
+
   
   .homepage-container::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
@@ -122,4 +124,11 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
   }
   
-  
+  .footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0;
+  }

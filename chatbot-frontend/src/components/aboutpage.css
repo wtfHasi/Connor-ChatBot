@@ -1,0 +1,84 @@
+/* AboutPage.css */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align content to the top */
+    min-height: calc(100vh - 80px); /* Full height of the viewport */
+    padding-top: 80px; /* Give some space for the navbar */
+    padding-bottom: 0px; /* Leave space for the footer */
+    color: white;
+    border-radius: 12px;
+  }
+  
+  .about-content {
+    max-width: 1175px; /* Maximum width for large screens */
+    width: 100%; /* Make sure it takes up the full width of the container */
+    text-align: left; /* Left-align text */
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* Compatibility with WebKit browsers */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    margin: 0 20px; /* Add margin left and right to prevent content from touching the edges */
+    margin-bottom: 20px; /* Space for the footer */
+    overflow-y: auto; /* Make the content scrollable */
+    flex-grow: 1; /* Allow content to grow and take available space */
+  }
+  
+  
+  .about-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  }
+  
+  .about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  }
+  
+  .about-content h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .about-content ul {
+    margin-bottom: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .go-home-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background: rgba(104, 112, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Button border */
+    backdrop-filter: blur(5px); /* Add blur effect */
+    -webkit-backdrop-filter: blur(5px); /* Compatibility for WebKit */
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .go-home-button:hover {
+    background: rgba(104, 112, 255, 0.8);
+  }
+  
+  .footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0;
+  }
