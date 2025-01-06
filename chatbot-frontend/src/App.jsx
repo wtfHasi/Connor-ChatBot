@@ -27,8 +27,13 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         
         {/* Contact Page Route */}
-        <Route path="/contact" element={<Contact />} /> {/* Add Contact page route */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      {/* Footer */}
+      <div className="footer">
+        © 2024 Connor. All Rights Reserved.
+      </div>
     </Router>
   );
 };

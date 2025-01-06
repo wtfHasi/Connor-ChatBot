@@ -74,3 +74,16 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.100); /* Subtle text shadow for depth */
+}

@@ -54,10 +54,6 @@ const HomePage = () => {
           Have questions or need support? Contact us at <a href="mailto:support@connor.com">support@connor.com</a>
         </p>
       </section>
-      {/* Footer */}
-      <footer className="footer">
-        <p>© 2024 Connor. All Rights Reserved.</p>
-      </footer>
     </div>
   );
 };

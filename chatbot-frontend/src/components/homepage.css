@@ -124,11 +124,3 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
   }
   
-  .footer {
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    padding: 10px 0;
-  }
