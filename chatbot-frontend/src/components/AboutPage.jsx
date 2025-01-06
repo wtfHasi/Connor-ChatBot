@@ -30,9 +30,6 @@ const AboutPage = () => {
         </p>
         <button className="go-home-button" onClick={handleGoHome}>Back to Home</button>
       </div>
-      <div className="footer">
-        © 2024 Connor. All Rights Reserved.
-      </div>
     </div>
   );
 };

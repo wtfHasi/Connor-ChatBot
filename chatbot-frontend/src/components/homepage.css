@@ -1,24 +1,25 @@
 /* Homepage Container */
 .homepage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    margin-top: 80px; /* Adjust this margin to match your navbar's height */
-    color: white;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    height: auto; /* Allow the height to adjust based on content */
-    overflow-y: auto; /* Enable vertical scrolling */
-    box-sizing: border-box;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-    border-radius: 12px; /* Added to give rounded corners */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 80px; /* Adjust this margin to match your navbar's height */
+  margin-bottom: 80px; /* Space to create room for the footer */
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  min-height: calc(100vh - 180px); /* Adjust this for navbar and footer height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-sizing: border-box;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  border-radius: 12px; /* Added to give rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
-  
   .homepage-container::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
   }
