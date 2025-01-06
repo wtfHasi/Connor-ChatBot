@@ -7,8 +7,9 @@ import SignUp from "./components/SignUp";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
 import BackgroundVideo from "./components/BackgroundVideo";
-import ChatBot from "./components/ChatBot";  // Import your new ChatBotPage component
-import AboutPage from "./components/AboutPage"; // Import the AboutPage component
+import ChatBot from "./components/ChatBot";  
+import AboutPage from "./components/AboutPage";
+import Contact from "./components/Contact"; // Import the Contact component
 
 const App = () => {
   return (
@@ -22,10 +23,11 @@ const App = () => {
         {/* Other Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/chatbot" element={<ChatBot />} /> {/* Add the chatbot route */}
+        <Route path="/chatbot" element={<ChatBot />} />
+        <Route path="/about" element={<AboutPage />} />
         
-        {/* About Page Route */}
-        <Route path="/about" element={<AboutPage />} /> {/* Add About page route */}
+        {/* Contact Page Route */}
+        <Route path="/contact" element={<Contact />} /> {/* Add Contact page route */}
       </Routes>
     </Router>
   );

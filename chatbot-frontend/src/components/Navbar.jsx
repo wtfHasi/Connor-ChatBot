@@ -1,36 +1,25 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";  // Use useNavigate instead of useHistory
-import "./Navbar.css"; // Import the CSS file
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
-  const [scrolling, setScrolling] = useState(false); // State to track scroll position
+  const [scrolling, setScrolling] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();  // Access the navigate function for redirection
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true); // Hide navbar when scrolled down
-      } else {
-        setScrolling(false); // Show navbar when at the top
-      }
+      setScrolling(window.scrollY > 50);
     };
 
-    // Add event listener to handle scroll
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Handle logout
   const handleLogout = () => {
-    // Clear any authentication data, like a token or user session
-    localStorage.removeItem("authToken"); // Example: remove auth token from localStorage
-    // Redirect to the login page
+    localStorage.removeItem("authToken");
     navigate("/login");
   };
 
@@ -40,9 +29,9 @@ const Navbar = () => {
         <Link to="/">Connor</Link>
       </div>
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        {location.pathname !== "/" && <Link to="/">Home</Link>}
+        {location.pathname !== "/about" && <Link to="/about">About</Link>}
+        {location.pathname !== "/contact" && <Link to="/contact">Contact</Link>}
       </div>
       <div className="auth-buttons">
         {location.pathname === "/login" ? (
@@ -53,7 +42,7 @@ const Navbar = () => {
           <Link to="/login">
             <button>Login</button>
           </Link>
-        ) : location.pathname === "/chatbot" ? ( // Show logout only on chatbot page
+        ) : location.pathname === "/chatbot" ? (
           <button onClick={handleLogout}>Log Out</button>
         ) : null}
       </div>

@@ -1,0 +1,72 @@
+/* Contact.css */
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px); /* Adjust for navbar height and footer */
+    padding: 20px;
+    margin-top: 80px; /* Space below the navbar */
+    margin-bottom: 80px; /* Add margin to prevent overlap with footer */
+    color: white;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* Compatibility for WebKit browsers */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    font-weight: bold; /* Make the heading bold */
+}
+
+
+.contact-container p {
+    font-size: 1.25rem; /* Adjust paragraph font size */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.2rem; /* Adjust link text size */
+}
+
+.contact-links a:hover {
+    transform: scale(1.1);
+    color: rgba(104, 112, 255, 0.8);
+}
+
+.contact-icon {
+    width: 32px; /* Standard icon size */
+    height: 32px;
+}
+
+.contact-footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+ 
