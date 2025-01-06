@@ -2,10 +2,10 @@
 .chatbot-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Align everything to the bottom initially */
+  justify-content: flex-start; /* Align the content from the top initially */
   align-items: center;
   width: 1000px; /* Fixed width */
-  height: 700px; /* Fixed height */
+  height: calc(100vh - 180px); /* Adjust height to leave space for navbar and footer */
   margin: 80px auto 0;
   padding: 20px;
   box-sizing: border-box;
@@ -18,23 +18,25 @@
   overflow: hidden;
 }
 
+/* Chat Window (messages container) */
 .chat-window {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  height: calc(100% - 80px);
+  height: calc(100% - 80px); /* Subtract space for the chat input area */
   overflow-y: auto; /* Enable scrolling */
   padding: 10px;
   box-sizing: border-box;
   scrollbar-width: none; /* Hide scrollbar for Firefox */
+  margin-bottom: 80px; /* Ensure messages are not blocked by footer */
 }
 
 .chat-window::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
 }
 
-/* Chat Input Area (Bottom Window) */
+/* Chat Input Area (bottom section) */
 .chat-input-area {
   display: flex;
   align-items: center;
