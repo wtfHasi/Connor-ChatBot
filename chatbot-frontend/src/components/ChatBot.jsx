@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { generateChatResponse } from "../api"; // Import the API to interact with Cohere
+import { generateChatResponse, fetchChatMessages } from "../api"; // Import API functions
 import Message from './Message'; // Import the Message component
 import './chatbot.css'; // Import the chatbot's CSS
 
@@ -7,6 +7,19 @@ const ChatBot = () => {
   const [userMessage, setUserMessage] = useState(""); // User input message
   const [messages, setMessages] = useState([]); // Store the conversation
   const chatMessagesRef = useRef(null); // Reference for the chat messages container
+
+  // Fetch messages on component mount
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const fetchedMessages = await fetchChatMessages(); // Fetch messages from the backend
+        setMessages(fetchedMessages); // Update state with fetched messages
+      } catch (error) {
+        console.error("Error fetching messages:", error);
+      }
+    };
+    fetchMessages();
+  }, []);
 
   // Scroll to bottom of the chat window
   useEffect(() => {
