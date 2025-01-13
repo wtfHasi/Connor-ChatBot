@@ -34,8 +34,8 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/connor-chatbot.git
-   cd connor-chatbot
+   git clone https://github.com/yourusername/Connor.git
+   cd Connor
    ```
 
 2. **Install Dependencies**:
@@ -61,45 +61,14 @@
    ```bash
    # Start the backend
    cd backend
-   npm run dev
+   npm start
 
    # Start the frontend
    cd ../frontend
    npm run dev
    ```
 
-   The backend will run on `http://localhost:5000`, and the frontend on `http://localhost:3000`.
-
----
-
-## API Endpoints
-
-### Chatbot Endpoint
-- **POST** `/api/intelligence/chat`
-  - **Description**: Sends a message to Connor and receives a brief response.
-  - **Request Body**:
-    ```json
-    {
-      "message": "Hello Connor!"
-    }
-    ```
-  - **Response**:
-    ```json
-    {
-      "response": "Hi there! How can I assist you?"
-    }
-    ```
-
-### Message History
-- **GET** `/api/intelligence/messages`
-  - **Description**: Fetches a user's message history.
-  - **Response**:
-    ```json
-    [
-      { "content": "Hello", "createdAt": "2025-01-14T10:00:00Z" },
-      { "content": "How are you?", "createdAt": "2025-01-14T10:01:00Z" }
-    ]
-    ```
+   The backend will run on `http://localhost:5000`, and the frontend on `http://localhost:5173`.
 
 ---
 
