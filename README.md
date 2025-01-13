@@ -106,7 +106,7 @@
 ## Screenshots
 
 1. **Login Interface**
-   ![Chat Interface](./assets/connor1 (2).png))
+   ![Chat Interface](./assets/Connor1.png))
 
 2. **Chat Interface**
    ![Message History](./assets/Connor2.png)
