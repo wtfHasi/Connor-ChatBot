@@ -105,11 +105,11 @@
 
 ## Screenshots
 
-1. **Chat Interface**
-   ![Chat Interface](https://via.placeholder.com/800x400?text=Chat+Interface)
+1. **Login Interface**
+   ![Chat Interface](./assets/connor1.png))
 
-2. **Message History**
-   ![Message History](https://via.placeholder.com/800x400?text=Message+History)
+2. **Chat Interface**
+   ![Message History](./assets/Connor2.png)
 
 ---
 
@@ -133,7 +133,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Contact
-
-For questions or feedback, please reach out at **your-email@example.com**.
 
