@@ -8,10 +8,10 @@
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   word-wrap: break-word; /* Ensures long words break within the box */
-  width: fit-content; /* Adjust the width to fit the content */
+  width: fit-content; /* Adjusts the width to fit the content */
   max-width: 80%; /* Limits the width for longer messages */
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically center text inside the message box */
 }
 
 /* User's Message */

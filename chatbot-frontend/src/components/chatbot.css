@@ -23,13 +23,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: stretch;
-  height: calc(100% - 80px); /* Subtract space for the chat input area */
+  align-items: flex-start;
+  height: calc(100%); /* Subtract space for the chat input area */
   overflow-y: auto; /* Enable scrolling */
   padding: 10px;
   box-sizing: border-box;
   scrollbar-width: none; /* Hide scrollbar for Firefox */
-  margin-bottom: 80px; /* Ensure messages are not blocked by footer */
+  margin-bottom: 20px; /* Ensure messages are not blocked by footer */
 }
 
 .chat-window::-webkit-scrollbar {
