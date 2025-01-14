@@ -11,7 +11,7 @@ import cohere
 
 
 # Initialize Cohere client with your API key
-co = cohere.Client('JumbNC1BErT5ybzEXD2cAJQEuXcHBJzulYZwe4ii')  # Replace with your actual API key
+co = cohere.Client('MVzkWGn1ntb9BjAT3FOsrYTzdERiVh0GwG1SaHUz')  # Replace with your actual API key
 
 
 # In[3]:
@@ -39,7 +39,7 @@ def generate_response(user_message):
 
     # Generate a response using Cohere
     response = co.generate(
-        model='command-xlarge-nightly',
+        model='command-r-plus-08-2024',
         prompt=prompt,
         max_tokens=100,
         temperature=0.7,
