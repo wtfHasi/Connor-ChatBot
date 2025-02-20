@@ -41,11 +41,11 @@
 2. **Install Dependencies**:
    ```bash
    # For the backend
-   cd backend
+   cd chatbot-backend
    npm install
 
    # For the frontend
-   cd ../frontend
+   cd ../chatbot-frontend
    npm install
    ```
 
@@ -60,11 +60,11 @@
 4. **Start the Development Servers**:
    ```bash
    # Start the backend
-   cd backend
+   cd chatbot-backend
    npm start
 
    # Start the frontend
-   cd ../frontend
+   cd ../chatbot-frontend
    npm run dev
    ```
 
@@ -82,24 +82,11 @@
 
 ---
 
-## Future Improvements
-
-- Add voice input and response capabilities.
-- Integrate AI-driven natural language processing for enhanced conversations.
-- Support multi-language responses.
-
----
-
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 
