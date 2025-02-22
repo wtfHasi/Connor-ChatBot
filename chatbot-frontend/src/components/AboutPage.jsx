@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './aboutPage.css'; // Import the CSS file
+import './aboutpage.css'; // Import the CSS file
 
 const AboutPage = () => {
   const navigate = useNavigate(); // Hook to navigate to other pages
