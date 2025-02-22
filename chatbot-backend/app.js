@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const connectDB = require('./src/config/db');
 require('dotenv').config({ path: './.env' });
-
-const userRoutes = require('./src/routes/userRoutes'); // Import user routes
-const intelligenceRoutes = require('../intelligence/src/routes/intelligenceRoutes'); // Intelligence routes
+//Import Routes
+const userRoutes = require('./src/routes/userRoutes');
+const intelligenceRoutes = require('../intelligence/src/routes/intelligenceRoutes');
 
 const app = express();
 
